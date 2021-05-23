@@ -1,4 +1,4 @@
-Description
+## Description
 
 
 This project was realized with React Native.
@@ -8,10 +8,11 @@ Additional install:
 - react-native-elements (creating News Cards)
 - @react-navigation (navigation between the Tabs)
 
-Navigation Tabs include three buttons: Home, News, Profile
+Navigation Tabs include three buttons: *Home, News, Profile*
 
 Tabs Navigation:
 
+```
  <NavigationContainer>
       <Tabs.Navigator>
         <Tabs.Screen name="Home" component={HomeStackScreen} />
@@ -19,29 +20,32 @@ Tabs Navigation:
         <Tabs.Screen name="Profile" component={ProfileStackScreen} />
   </Tabs.Navigator>
     </NavigationContainer>
+```
 
 
 
 There are four main Screens in the App described in file Screen.js:
-- Home (main Welcome Screen)
-- News (includes News posts)
-- Profile (personal user info)
-- Login (sign in screen)
+- *Home* (main Welcome Screen)
+- *News* (includes News posts)
+- *Profile* (personal user info)
+- *Login* (sign in screen)
 
 
 
  Main Screen:
-
+ 
+```
   export const HomeScreen = ({ navigation }) => (
     <ScreenContainer>
       <Text style={styles.logo}>WELCOME!</Text>
      
     </ScreenContainer>
   );
-
+  ```
 
  News Screen:
 
+```
  const Newslist = () => {
       return array.map((list) => {
         return (
@@ -70,9 +74,11 @@ There are four main Screens in the App described in file Screen.js:
 
     return  <ScreenContainer>{Newslist()}</ScreenContainer>; 
 };
+```
 
  Profile Screen:
 
+```
  export const ProfileScreen = ({ navigation }) => (
     <ScreenContainer>
       <Text>Profile Page Screen</Text>
@@ -97,9 +103,11 @@ export const LogInScreen = ({ navigation }) => {
       })
       .catch((err) => setErrorMessage(err.message));
   };
+```
 
   Login function:
 
+```
    const loginUser = async () => {
     setErrorMessage('');
     login(loginValue, pswdValue)
@@ -109,3 +117,4 @@ export const LogInScreen = ({ navigation }) => {
       })
       .catch((err) => setErrorMessage(err.message));
   };
+  ```
